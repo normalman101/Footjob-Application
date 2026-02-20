@@ -93,7 +93,7 @@ fun List(label: String, modifier: Modifier = Modifier) {
     ) {
         var show_list = Button(
             content = { Text(text = "Показать список")},
-            modifier = modifier,
+            modifier = modifier.width(300.dp),
             onClick = {},
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color.White,
@@ -105,7 +105,7 @@ fun List(label: String, modifier: Modifier = Modifier) {
 
         var add_person = Button(
             content = { Text(text = "Добавить человека") },
-            modifier = modifier,
+            modifier = modifier.width(300.dp),
             onClick = {
                 message.value =
                     surname_buffer.value + " " + name_buffer.value + " " + patronymic_buffer.value
@@ -127,7 +127,12 @@ fun List(label: String, modifier: Modifier = Modifier) {
             onValueChange = { text -> surname_buffer.value = text },
             modifier = modifier.width(300.dp),
             placeholder = {Text(text = "Фамилия", color = Color.Gray)},
-
+            colors = TextFieldDefaults.colors(
+                focusedContainerColor = Color.Transparent,
+                unfocusedContainerColor = Color.Transparent,
+                focusedTextColor = Color.Black,
+                cursorColor = Color.Black
+            )
         )
 
         var nameInput = TextField(
@@ -135,6 +140,12 @@ fun List(label: String, modifier: Modifier = Modifier) {
             onValueChange = { text -> name_buffer.value = text },
             modifier = modifier.width(300.dp),
             placeholder = {Text(text = "Имя", color = Color.Gray)},
+            colors = TextFieldDefaults.colors(
+                focusedContainerColor = Color.Transparent,
+                unfocusedContainerColor = Color.Transparent,
+                focusedTextColor = Color.Black,
+                cursorColor = Color.Black
+            )
 
         )
 
@@ -142,7 +153,13 @@ fun List(label: String, modifier: Modifier = Modifier) {
             value = patronymic_buffer.value,
             onValueChange = { text -> patronymic_buffer.value = text },
             modifier = modifier.width(300.dp),
-            placeholder = {Text(text = "Отчество", color = Color.Gray)}
+            placeholder = {Text(text = "Отчество", color = Color.Gray)},
+            colors = TextFieldDefaults.colors(
+                focusedContainerColor = Color.Transparent,
+                unfocusedContainerColor = Color.Transparent,
+                focusedTextColor = Color.Black,
+                cursorColor = Color.Black
+            )
 
         )
 
@@ -150,7 +167,13 @@ fun List(label: String, modifier: Modifier = Modifier) {
             value = Birthday_bufer.value,
             onValueChange = { text -> Birthday_bufer.value = text },
             modifier = modifier.width(300.dp),
-            placeholder = {Text(text = "Дата рождения", color = Color.Gray)}
+            placeholder = {Text(text = "Дата рождения", color = Color.Gray)},
+            colors = TextFieldDefaults.colors(
+                focusedContainerColor = Color.Transparent,
+            unfocusedContainerColor = Color.Transparent,
+            focusedTextColor = Color.Black,
+            cursorColor = Color.Black
+        )
         )
 
 
